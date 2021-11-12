@@ -1,0 +1,14 @@
+# Restaurant-Sale-App
+
+Goal: Makuha yung order w/ calculations sa waiter
+GUI: Waiter lang
+
+Event 1: Open app
+
+ Pag di pa nagload, Logo - GIF
+ pag nagload, stay still stop logo, zoom in or fade our
+ new window - Login
+
+Event 2:
+
+  

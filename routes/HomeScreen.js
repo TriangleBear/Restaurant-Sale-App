@@ -1,124 +1,348 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {View, Text, Button, StyleSheet, SafeAreaView, ScrollView, Image, Alert, StatusBar} from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView, Image, ImageBackground, Alert, StatusBar } from 'react-native';
 
-export function Homebar(){
-    return(
-        <View style={styles.homeText}>
-            <Text style={{fontSize: 45}}>
-                Home
-            </Text>
-        </View>
+export function Homebar() {
+    return (
+        <ImageBackground style={styles.homeBG} source={require('./HomeScreenAssets/Home_Image.jpg')}>
+            <View style={styles.container}>
+
+                <Image style={styles.homeImage}
+                    source={require('./HomeScreenAssets/Waiter_Logo.png')}
+                />
+
+
+                <Text style={[{ textAlign: "center" }, { fontWeight: "bold" }, { color: "white" }, { fontSize: 20 }]}> Waiter's Tablet</Text>
+                <Text style={[{ textAlign: "center" }, { color: "white" }, { fontSize: 20 }, { margin: 40 }]}> Follow this app on social media</Text>
+
+
+
+            </View>
+        </ImageBackground>
     );
 }
-export function FoodMenubar(){
-    return(
-        <SafeAreaView style={styles.orderText}>
+export function FoodMenubar() {
+    return (
+        <SafeAreaView>
             <ScrollView>
-            <View style={styles.container}>
-            <Text style={{fontSize: 25}}>
-                Adobo: Php 60
-            </Text>
-            <Image
-                source={require('./HomeScreenAssets/Pork-Adobo-3.jpg')}
-            />
-            <View style={styles.orderPanel}>
-            <Button
-                title="Order"
-                onPress={()=>Alert.alert('Added Adobo')}
-            />
-            <Button
-                title="Remove"
-                onPress={()=>Alert.alert('Removed Adobo')}
-            />
-            </View>
-            </View>
-            <View style={styles.container}>
-            <Text style={{fontSize: 25}}>
-                Chopsuey: Php 40
-            </Text>
-            <Image
-                source={require('./HomeScreenAssets/chop-suey.jpg')}
-            />
-            <View style={styles.orderPanel}>
-            <Button
-                title="Order"
-                onPress={()=>Alert.alert('Added Adobo')}
-            />
-            <Button
-                title="Remove"
-                onPress={()=>Alert.alert('Removed Adobo')}
-            />
-            </View>
-            </View>
-            <View style={styles.container}>
-            <Text style={{fontSize: 25}}>
-                Nilagang Baka: Php 100
-            </Text>
-            <Image
-                source={require('./HomeScreenAssets/nilagang-baka.jpg')}
-            />
-            <View style={styles.orderPanel}>
-            <Button
-                title="Order"
-                onPress={()=>Alert.alert('Added Adobo')}
-            />
-            <Button
-                title="Remove"
-                onPress={()=>Alert.alert('Removed Adobo')}
-            />
-            </View>
-            </View>
+                {/* Header */}
+                <Text style={styles.orderTextHeader}>Sinigang</Text>
+                {/* pork */}
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>pork: 315</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* fish */}
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>fish: 345</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* prawn */}
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>prawn: 395</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* Header */}
+                <Text style={styles.orderTextHeader}>Adobo</Text>
+                {/* pork adobo */}
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>pork: 315</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* chicken adobo */}
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>chicken: 315</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <Text style={styles.orderTextHeader}></Text>
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Tinolang Manok: 315</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Bulalo Soup: 395</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Crispy Pata: 595</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Pancit Canton: 195</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Pancit Bihon: 195</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Bicol Express: 315</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Bistik Tagalog: 315</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Rice: 50</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <Text style={styles.orderTextHeader}>Drinks</Text>
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Sarsi 1.5: 60</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Royal 1.5: 60</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Coke 1.5: 60</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Sprite 1.5: 60</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Ice Tea: 55</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.orderPanel}>
+                    <Text style={[styles.orderText]}>Pineapple Juice: 55</Text>
+                    <TouchableOpacity
+                        style={styles.buttonOrderPanelgreen}
+                        onPress={() => Alert.alert('')}>
+                        <Text style={{ fontSize: 25 }}>Order</Text>
+                    </TouchableOpacity>
+                </View>
             </ScrollView>
         </SafeAreaView>
     );
 }
-export function Orderbar(){
-    return(
+export function Orderbar() {
+    return (
         <View style={styles.homeText}>
-            <Text style={{fontSize: 45}}>
+            <Text style={{ fontSize: 45 }}>
                 Order
             </Text>
         </View>
     );
 }
-export function Aboutbar(){
-    return(
-        <View style={styles.homeText}>
-            <Text style={{fontSize: 25}}>
-                Designer: Yevette Marionne Medrano
-            </Text>
-            <Text style={{fontSize: 25}}>
-                Developer: Aj Revilla
-            </Text>
-            <Text style={{fontSize: 25}}>
-                Full Stack: Kurt Jayson Zacarias
-            </Text>
-        </View>
+let name1 = "Designer / Front End Developer: Yvette Marionne Medrano";
+let name2 = "Back End Developer: Aj Revilla";
+let name3 = "Full Stack Developer: Kurt Jayson Zacarias";
+export function Aboutbar() {
+    return (
+            <View>
+                    <View style={styles.homeTopView}>
+                        <Text style={[{ color: "white" }, 
+                            { fontSize: 30 }, 
+                            { fontWeight: "bold" }]}>Waiter's Tablet</Text>
+                        <Text style={[{ textAlign: "center" }, 
+                            { color: "white" }, 
+                            { fontSize: 15 }, 
+                            { margin: 20 }]}> Our mission is to get orders from the customer and have the waiter collect the lists</Text>
+
+                    </View>
+
+
+
+                    <View style={styles.homeMidView}></View>
+
+                    <Text style={[{ color: "black" }, 
+                        { fontSize: 30 }, 
+                        { fontWeight: "bold" }, 
+                        { textAlign: "center" }, 
+                        { margin: 20 }]}>The Developers:</Text>
+
+                    <View style={{ flexDirection: "row", margin: 5 }}>
+                        <Image style={styles.aboutImg} source={require('./HomeScreenAssets/yvette.jpeg')} />
+
+                        <Text style={styles.aboutText}>{name1}</Text>
+
+                    </View>
+                    <View style={{ flexDirection: "row", margin: 5 }}>
+
+                        <Image style={styles.aboutImg} source={require('./HomeScreenAssets/jay.jpg')} />
+
+                        <Text style={styles.aboutText}>{name2}</Text>
+                    </View>
+                    <View style={{ flexDirection: "row", margin: 5 }}>
+
+                        <Image style={styles.aboutImg} source={require('./HomeScreenAssets/kurt.jpg')} />
+
+                        <Text style={styles.aboutText}>{name3}</Text>
+                    </View>
+            </View>
     );
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: StatusBar.currentHeight || 4,
-        marginBottom: StatusBar.currentHeight || 2,
-        backgroundColor: '#dcdedc' 
     },
-    orderPanel: {
-        flexDirection: 'row',
-        justifyContent: 'start',
-        margin: 5
+    homeBG: {
+        height: "100%",
+        width: "100%",
+    },
+    homeTopView: {
+        height: "25%",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: '#63cdda',
+    },
+    homeMidView: {
+        height: "3%",
+        backgroundColor: 'black',
     },
     homeText: {
         flex: 1,
-        backgroundColor: '#3498DB',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    homeImage: {
+        height: 300,
+        width: 300,
+        alignSelf: "center",
+        margin: 10,
+        borderRadius: 150 / 2,
+        overflow: "hidden",
+        borderWidth: 3,
+        borderColor: "black",
+        backgroundColor: "#34ace0",
+    },
+    orderTextHeader: {
+        backgroundColor: '#5499C7',
+        alignItems: 'center',
+        fontSize: 45
+    },
     orderText: {
         flex: 1,
-        backgroundColor: '#3498DB',
+        fontSize: 25,
+        color: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    orderPanel: {
+        backgroundColor: '#2471A3',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buttonOrderPanelgreen: {
+        backgroundColor: 'green',
+        marginTop: 10,
+        paddingHorizontal: 15
+    },
+    aboutView: {
+        flex: 1,
+        flexDirection: "row",
+    },
+    aboutText: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: '#63cdda',
+        fontSize: 30,
+    },
+    aboutImg: {
+        width: 100,
+        height: 100,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 150 / 2,
+        overflow: "hidden",
+        borderWidth: 3,
+        borderColor: "black"
     },
 });
 

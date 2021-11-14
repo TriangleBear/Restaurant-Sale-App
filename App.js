@@ -1,8 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Button, View, Alert, Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
 import SplashScreen from './routes/SplashScreen';
@@ -10,7 +8,6 @@ import HomeScreen from './routes/HomeScreen';
 
 
 const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
 
 export default function App(){
   return (

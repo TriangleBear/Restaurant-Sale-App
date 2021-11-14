@@ -1,5 +1,3 @@
-# Restaurant-Sale-App
-Mobile Computing Project
 <div>
 <h1>
 Restaurant Order Pad

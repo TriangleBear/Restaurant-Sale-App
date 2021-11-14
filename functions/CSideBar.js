@@ -3,7 +3,8 @@ import {
   SafeAreaView,
   StyleSheet,
   Image,
-  Text
+  Text,
+  View
 } from 'react-native';
 
 import {
@@ -15,10 +16,10 @@ const CSideBar = (props) => {
   const BASE_PATH =
     'https://i.imgur.com/';
   const proileImage = 'NwwfZ1L.png';
-
   return (
     <SafeAreaView style={{flex: 1}}>
       {/*Top Large Image */}
+      <View style={[styles.topView]}></View>
       <Image
         source={{uri: BASE_PATH + proileImage}}
         style={styles.sideMenuProfileIcon}
@@ -32,19 +33,25 @@ const CSideBar = (props) => {
           textAlign: 'center',
           color: 'grey'
         }}>
-        by Unamedgrp
+        by JYK Corporation
       </Text>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  topView:{
+    padding:16,
+    paddingTop:80,
+    backgroundColor: '#63cdda'
+ },
   sideMenuProfileIcon: {
     resizeMode: 'center',
     width: 100,
     height: 100,
-    borderRadius: 100 / 2,
+    borderRadius: 50,
     alignSelf: 'center',
+    position: 'absolute'
   },
   iconStyle: {
     width: 50,

@@ -8,10 +8,9 @@ import { View,
     ScrollView, 
     Image, 
     ImageBackground, 
-    Alert } from 'react-native';
- 
-export function Homebar() {
+    Alert } from 'react-native'
 
+export function Homebar() {
     return (
         <ImageBackground style={styles.homeBG} source={require('./HomeScreenAssets/Home_Image.jpg')}>
             <View style={styles.container}>

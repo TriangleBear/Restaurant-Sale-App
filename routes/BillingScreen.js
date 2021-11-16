@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity, Alert } from 'react-native';
 
+
 const Data = [
   //just add a bracket with "title:" to generate a tab.
   {
@@ -13,7 +14,7 @@ const Data = [
   }
 ];
 
-const Item = ({ title, orderList, qty,price}) => (
+const Item = ({ title,qty,price}) => (
   <View style={styles.clientBar}>
 
   <View>

@@ -8,10 +8,10 @@ import { View,
     ScrollView, 
     Image, 
     ImageBackground, 
-    Alert, 
-    StatusBar } from 'react-native';
-
+    Alert } from 'react-native';
+ 
 export function Homebar() {
+
     return (
         <ImageBackground style={styles.homeBG} source={require('./HomeScreenAssets/Home_Image.jpg')}>
             <View style={styles.container}>
@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontWeight: "bold",
         color: "white",
-        fontSize: 20,
+        fontSize: 50,
     },
     homeImage: {
         height: 300,

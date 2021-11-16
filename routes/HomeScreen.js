@@ -1,6 +1,15 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView, Image, ImageBackground, Alert, StatusBar } from 'react-native';
+import { View, 
+    Text, 
+    TouchableOpacity, 
+    StyleSheet, 
+    SafeAreaView, 
+    ScrollView, 
+    Image, 
+    ImageBackground, 
+    Alert, 
+    StatusBar } from 'react-native';
 
 export function Homebar() {
     return (
@@ -10,13 +19,8 @@ export function Homebar() {
                 <Image style={styles.homeImage}
                     source={require('./HomeScreenAssets/Waiter_Logo.png')}
                 />
-
-
-                <Text style={[{ textAlign: "center" }, { fontWeight: "bold" }, { color: "white" }, { fontSize: 20 }]}> Waiter's Tablet</Text>
-                <Text style={[{ textAlign: "center" }, { color: "white" }, { fontSize: 20 }, { margin: 40 }]}> Follow this app on social media</Text>
-
-
-
+                <Text
+                    style={styles.homeText}> Waiter's Tablet</Text>
             </View>
         </ImageBackground>
     );
@@ -31,8 +35,9 @@ export function FoodMenubar() {
                 <View style={styles.orderPanel}>
                     <Text style={[styles.orderText]}>pork: 315</Text>
                     <TouchableOpacity
+                        title='porkSinBtn'
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Sinigang na Baboy') }>{/* */}
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -42,7 +47,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>fish: 345</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Sinigang na Isda')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -52,7 +57,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>prawn: 395</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Sinigang na Hipon')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -64,7 +69,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>pork: 315</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Pork Adobo')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -74,7 +79,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>chicken: 315</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Chicken Adobo')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -84,7 +89,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Tinolang Manok: 315</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Tinolang Manok')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -93,7 +98,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Bulalo Soup: 395</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Bulalo Soup')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -102,7 +107,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Crispy Pata: 595</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Cripy Pata')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -111,7 +116,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Pancit Canton: 195</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Pancit Canton')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -120,7 +125,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Pancit Bihon: 195</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Pancit Bihon')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -129,7 +134,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Bicol Express: 315</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Bicol Express')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -138,7 +143,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Bistik Tagalog: 315</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Bistik Tagalog')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -147,7 +152,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Rice: 50</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Rice')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -157,7 +162,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Sarsi 1.5: 60</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Sarsi 1.5')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -166,7 +171,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Royal 1.5: 60</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Royal 1.5')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -175,7 +180,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Coke 1.5: 60</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Coke 1.5')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -184,7 +189,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Sprite 1.5: 60</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Sprite 1.5')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -193,7 +198,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Ice Tea: 55</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Ice Tea Jag')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -202,7 +207,7 @@ export function FoodMenubar() {
                     <Text style={[styles.orderText]}>Pineapple Juice: 55</Text>
                     <TouchableOpacity
                         style={styles.buttonOrderPanelgreen}
-                        onPress={() => Alert.alert('')}>
+                        onPress={() => Alert.alert('Added Pineapple Juice Jag')}>
                         <Text style={{ fontSize: 25 }}>Order</Text>
                     </TouchableOpacity>
                 </View>
@@ -219,52 +224,63 @@ export function Orderbar() {
         </View>
     );
 }
+export function Activitybar() {
+    return (
+        <View style={styles.homeText}>
+            <Text style={{ fontSize: 45 }}>
+                Activity
+            </Text>
+        </View>
+    );
+}
 let name1 = "Designer / Front End Developer: Yvette Marionne Medrano";
 let name2 = "Back End Developer: Aj Revilla";
 let name3 = "Full Stack Developer: Kurt Jayson Zacarias";
 export function Aboutbar() {
     return (
-            <View>
-                    <View style={styles.homeTopView}>
-                        <Text style={[{ color: "white" }, 
-                            { fontSize: 30 }, 
-                            { fontWeight: "bold" }]}>Waiter's Tablet</Text>
-                        <Text style={[{ textAlign: "center" }, 
-                            { color: "white" }, 
-                            { fontSize: 15 }, 
-                            { margin: 20 }]}> Our mission is to get orders from the customer and have the waiter collect the lists</Text>
+        <View>
+            <View style={styles.homeTopView}>
+                <Text style={[{ color: "white" },
+                { fontSize: 30 },
+                { fontWeight: "bold" }]}>Waiter's Tablet</Text>
+                <Text style={[{ textAlign: "center" },
+                { color: "white" },
+                { fontSize: 15 },
+                { margin: 20 }]}> Our mission is to get orders from the customer and have the waiter collect the lists</Text>
 
-                    </View>
-
-
-
-                    <View style={styles.homeMidView}></View>
-
-                    <Text style={[{ color: "black" }, 
-                        { fontSize: 30 }, 
-                        { fontWeight: "bold" }, 
-                        { textAlign: "center" }, 
-                        { margin: 20 }]}>The Developers:</Text>
-
-                    <View style={{ flexDirection: "row", margin: 5 }}>
-                        <Image style={styles.aboutImg} source={require('./HomeScreenAssets/yvette.jpeg')} />
-
-                        <Text style={styles.aboutText}>{name1}</Text>
-
-                    </View>
-                    <View style={{ flexDirection: "row", margin: 5 }}>
-
-                        <Image style={styles.aboutImg} source={require('./HomeScreenAssets/jay.jpg')} />
-
-                        <Text style={styles.aboutText}>{name2}</Text>
-                    </View>
-                    <View style={{ flexDirection: "row", margin: 5 }}>
-
-                        <Image style={styles.aboutImg} source={require('./HomeScreenAssets/kurt.jpg')} />
-
-                        <Text style={styles.aboutText}>{name3}</Text>
-                    </View>
             </View>
+
+
+
+            <View style={styles.homeMidView}></View>
+
+            <Text style={[{ color: "black" },
+            { fontSize: 30 },
+            { fontWeight: "bold" },
+            { textAlign: "center" },
+            { margin: 20 }]}>The Developers:</Text>
+
+            <View style={{ flexDirection: "row", margin: 5 }}>
+                <Image style={styles.aboutImg} source={require('./HomeScreenAssets/yvette.jpeg')} />
+
+                <Text style={styles.aboutText}>{name1}</Text>
+
+            </View>
+            <View style={{ flexDirection: "row", margin: 5 }}>
+
+                <Image style={styles.aboutImg} source={require('./HomeScreenAssets/jay.jpg')} />
+
+                <Text style={styles.aboutText}>{name2}</Text>
+            </View>
+            <View style={{ flexDirection: "row", margin: 5 }}>
+
+                <Image style={styles.aboutImg} source={require('./HomeScreenAssets/kurt.jpg')} />
+
+                <Text style={styles.aboutText}>{name3}</Text>
+
+            </View>
+            <Text style={{ fontSize: 5 }}>egg</Text>
+        </View>
     );
 }
 const styles = StyleSheet.create({
@@ -289,12 +305,16 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        textAlign: "center",
+        fontWeight: "bold",
+        color: "white",
+        fontSize: 20,
     },
     homeImage: {
         height: 300,
         width: 300,
         alignSelf: "center",
-        margin: 10,
+        margin: 100,
         borderRadius: 150 / 2,
         overflow: "hidden",
         borderWidth: 3,
@@ -332,7 +352,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#63cdda',
-        fontSize: 30,
+        fontSize: 27,
+        margin: 2,
     },
     aboutImg: {
         width: 100,

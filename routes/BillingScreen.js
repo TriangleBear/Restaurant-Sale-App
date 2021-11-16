@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity, Alert } from 'react-native';
 
 const Data = [
   //just add a bracket with "title:" to generate a tab.
@@ -24,7 +24,8 @@ const Item = ({ title, orderList, qty,price}) => (
       <Text style={styles.number}>{qty}</Text>
       </View>
     <TouchableOpacity
-        style={styles.button}>
+        style={styles.button}
+        onPress={() => Alert.alert('Done')}>
         <Text style={{color:"white", fontWeight: "bold"}}>Fulfilled</Text>
       </TouchableOpacity>
 
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
   },
   qty: {
     flexDirection: 'row',
-    justifyContent: 'start',
     margin: 5
   },
   button: {

@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, {Component} from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity} from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity, Alert} from 'react-native';
 import { Divider } from 'react-native-paper';
 import { PA } from './functions/OrderFood';
 
@@ -25,8 +25,10 @@ const Item = ({ title, orderList, qty}) => (
       <Text style={styles.number}>{qty}</Text>
       </View>
     <TouchableOpacity
-        style={styles.button}>
+        style={styles.button}
+        onPress={() => Alert.alert('Confirmed') }>
         <Text style={{color:"white", fontWeight: "bold"}}>Confirm</Text>
+        
       </TouchableOpacity>
   </View>
 );
@@ -75,7 +77,6 @@ const styles = StyleSheet.create({
   },
   qty: {
     flexDirection: 'row',
-    justifyContent: 'start',
     margin: 5
   },
   button: {

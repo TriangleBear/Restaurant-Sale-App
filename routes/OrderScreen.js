@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
-import React from 'react';
-import 'react-native';
+import React, {Component} from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { PA } from './functions/OrderFood';
 
-export const AddOrder=()=>{
-    
-}
+
+

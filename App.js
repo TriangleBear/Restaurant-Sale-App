@@ -4,9 +4,11 @@ import { StyleSheet, Text, View, Image, Button, AppRegistry} from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { Homebar,FoodMenubar,Aboutbar, Activitybar } from './routes/HomeScreen';
+import { Homebar,FoodMenubar,Aboutbar} from './routes/HomeScreen';
+import OrderList from  './routes/OrderScreen';
+import Billing from  './routes/BillingScreen';
 import CSideBar from './routes/functions/CSideBar';
-import OrderScreen from './routes/OrderScreen.js';
+
 
 
 const Drawer = createDrawerNavigator();
@@ -43,7 +45,7 @@ export default function App(){
             ),
           }}
         />
-        <Drawer.Screen name="Order" component={OrderScreen}
+        <Drawer.Screen name="Order" component={OrderList}
           options={{
             drawerIcon: ({ size }) => (
               <Image
@@ -53,7 +55,7 @@ export default function App(){
             ),
           }}
         />
-        <Drawer.Screen name="Activity" component={Activitybar}
+        <Drawer.Screen name="Billing" component={Billing}
           options={{
             drawerIcon: ({ size }) => (
               <Image

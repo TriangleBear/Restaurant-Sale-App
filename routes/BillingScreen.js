@@ -1,42 +1,42 @@
-import 'react-native-gesture-handler';
-import React, {Component} from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity} from 'react-native';
-import { Divider } from 'react-native-paper';
-import { PA } from './functions/OrderFood';
+import React from 'react';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
 
 const Data = [
   //just add a bracket with "title:" to generate a tab.
   {
-    title: 'First Client',
-    orderList: '1x Sinigang: Pork \n1x Adobo: Pork \n6x Rice \n',
+    title: 'First Client - ',
+    price:' ₱ '
   },
   {
-    title: 'Second Client',
-    orderList: '1x Pancit Canton \n1x Sarsi',
+    title: 'Second Client - ',
+    price:' ₱ '
   }
 ];
 
-const Item = ({ title, orderList, qty}) => (
+const Item = ({ title, orderList, qty,price}) => (
   <View style={styles.clientBar}>
-    <Text style={styles.title}>{title}</Text>
-   <Divider/>
-    <Text style={styles.orderList}>{orderList}</Text>
+
+  <View>
+    <Text style={styles.title}>{title}{price}</Text>
+  
+   </View>
       <View style={styles.qty}>
       <Text style={styles.number}>{qty}</Text>
       </View>
     <TouchableOpacity
         style={styles.button}>
-        <Text style={{color:"white", fontWeight: "bold"}}>Confirm</Text>
+        <Text style={{color:"white", fontWeight: "bold"}}>Fulfilled</Text>
       </TouchableOpacity>
+
   </View>
 );
 
-const OrderList = () => {
+const Billing = () => {
   const renderItem = ({ item }) => (
     /* to add more stuff to read by this render, add a data to the "const Data" first then come back here and
     copy this format => <name of data> ={item. <name of data again>}
     it can be copied and pasted together with the others, itll do the rest! */
-    <Item title={item.title} orderList={item.orderList}/>
+    <Item title={item.title} orderList={item.orderList} price={item.price}/>
     
   );
 
@@ -65,10 +65,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight:'bold',
   },
-  orderList: {
-    fontSize: 12,
-    marginLeft: 6,
+  price:{
+    
   },
+
   number: {
     fontSize: 18,
     paddingLeft: 10,
@@ -85,11 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OrderList;
-
-
-
-
-
-
-
+export default Billing;

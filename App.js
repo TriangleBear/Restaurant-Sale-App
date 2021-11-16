@@ -4,8 +4,9 @@ import { StyleSheet, Text, View, Image, Button, AppRegistry} from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { Homebar,FoodMenubar,Orderbar,Aboutbar } from './routes/HomeScreen';
-import CSideBar from './functions/CSideBar';
+import { Homebar,FoodMenubar,Aboutbar, Activitybar } from './routes/HomeScreen';
+import CSideBar from './routes/functions/CSideBar';
+import OrderScreen from './routes/OrderScreen.js';
 
 
 const Drawer = createDrawerNavigator();
@@ -42,11 +43,21 @@ export default function App(){
             ),
           }}
         />
-        <Drawer.Screen name="Order" component={Orderbar}
+        <Drawer.Screen name="Order" component={OrderScreen}
           options={{
             drawerIcon: ({ size }) => (
               <Image
                 source={require('./assets/icons8-contact-24.png')}
+                style={{ height: size, }}
+              />
+            ),
+          }}
+        />
+        <Drawer.Screen name="Activity" component={Activitybar}
+          options={{
+            drawerIcon: ({ size }) => (
+              <Image
+                source={require('./assets/icons8-services-24.png')}
                 style={{ height: size, }}
               />
             ),

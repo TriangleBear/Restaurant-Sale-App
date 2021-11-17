@@ -1,55 +1,44 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity, Alert } from 'react-native';
+import {View, StyleSheet, Text, StatusBar, TouchableOpacity, Alert } from 'react-native';
 
 
-const Data = [
-  //just add a bracket with "title:" to generate a tab.
-  {
-    title: 'First Client - ',
-    price:' ₱ '
-  },
-  {
-    title: 'Second Client - ',
-    price:' ₱ '
+export default class Billing extends React.Component {
+  constructor(){
+    super()
+    this.state={
+      title: 'First Client - ',
+      price:' ₱ ',
+    }
   }
-];
-
-const Item = ({ title,qty,price}) => (
-  <View style={styles.clientBar}>
-
-  <View>
-    <Text style={styles.title}>{title}{price}</Text>
-  
-   </View>
-      <View style={styles.qty}>
-      <Text style={styles.number}>{qty}</Text>
-      </View>
-    <TouchableOpacity
-        style={styles.button}
-        onPress={() => Alert.alert('Done')}>
-        <Text style={{color:"white", fontWeight: "bold"}}>Fulfilled</Text>
-      </TouchableOpacity>
-
-  </View>
-);
-
-const Billing = () => {
-  const renderItem = ({ item }) => (
+  renderItem = ({ item }) => (
     /* to add more stuff to read by this render, add a data to the "const Data" first then come back here and
     copy this format => <name of data> ={item. <name of data again>}
     it can be copied and pasted together with the others, itll do the rest! */
-    <Item title={item.title} orderList={item.orderList} price={item.price}/>
+    <Item title={this.state.title} orderList={this.state.orderList} price={item.price}/>
     
   );
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={Data}
-        renderItem={renderItem}
-      />
-    </SafeAreaView>
-  );
+  
+    render(){
+      return (
+        <View style={styles.clientBar}>
+  
+    <View>
+      <Text style={styles.title}>{this.state.title}{this.state.price}</Text>
+    
+     </View>
+        <View style={styles.qty}>
+        <Text style={styles.number}>{this.state.qty}</Text>
+        </View>
+      <TouchableOpacity
+          style={styles.button}
+          onPress={() => Alert.alert('Done')}>
+          <Text style={{color:"white", fontWeight: "bold"}}>Fulfilled</Text>
+        </TouchableOpacity>
+  
+    </View>
+      );
+    }
+  
 }
 
 const styles = StyleSheet.create({
@@ -85,5 +74,3 @@ const styles = StyleSheet.create({
     padding: 7
   },
 });
-
-export default Billing;

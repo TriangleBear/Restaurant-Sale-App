@@ -4,16 +4,18 @@ import { StyleSheet, Text, View, Image, Button, AppRegistry} from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { Homebar,FoodMenubar,Aboutbar} from './routes/HomeScreen';
-import OrderList from  './routes/OrderScreen';
-import Billing from  './routes/BillingScreen';
+import Homebar from './routes/HomeScreen';
+import FoodMenubar from './routes/FoodMenuScreen';
+import OrderScreen from  './routes/OrderScreen';
+import BillingScreen from  './routes/BillingScreen';
+import Aboutbar from './routes/AboutScreen';
 import CSideBar from './routes/functions/CSideBar';
 
 
 
 const Drawer = createDrawerNavigator();
 
-export default function App(){
+export default App=()=>{
   return (
     <NavigationContainer>
       
@@ -45,7 +47,7 @@ export default function App(){
             ),
           }}
         />
-        <Drawer.Screen name="Order" component={OrderList}
+        <Drawer.Screen name="Order" component={OrderScreen}
           options={{
             drawerIcon: ({ size }) => (
               <Image
@@ -55,7 +57,7 @@ export default function App(){
             ),
           }}
         />
-        <Drawer.Screen name="Billing" component={Billing}
+        <Drawer.Screen name="Billing" component={BillingScreen}
           options={{
             drawerIcon: ({ size }) => (
               <Image

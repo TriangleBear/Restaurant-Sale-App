@@ -56,10 +56,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight:'bold',
   },
-  price:{
-    
-  },
-
   number: {
     fontSize: 18,
     paddingLeft: 10,

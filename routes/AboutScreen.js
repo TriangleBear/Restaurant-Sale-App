@@ -59,6 +59,30 @@ export default function Aboutbar() {
 }
 
 
+const styles = StyleSheet.create({
+    aboutView: {
+        flex: 1,
+        flexDirection: "row",
+    },
+    aboutText: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: '#63cdda',
+        fontSize: 27,
+        margin: 2,
+    },
+    aboutImg: {
+        width: 100,
+        height: 100,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 150 / 2,
+        overflow: "hidden",
+        borderWidth: 3,
+        borderColor: "black"
+    },
+});
+
 
 /*
 

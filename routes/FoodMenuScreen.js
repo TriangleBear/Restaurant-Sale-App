@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { View, 
     Text,
+    TouchableOpacity,
     StyleSheet, 
     SafeAreaView, 
     ScrollView, 
     Alert } from 'react-native'
 import { Divider } from 'react-native-paper';
-import OrderButton from './components/OrderButton';
+import OrderButton from './components/FoodMenuButtons';
 
-export default function FoodMenubar() {
+function FoodMenubar() {
     return (
         <SafeAreaView >
             <ScrollView >
@@ -140,6 +141,13 @@ export default function FoodMenubar() {
                         onPress={() => Alert.alert('Added Pineapple Juice Jag')}/>
                 </View>
             </ScrollView>
+            <View style={styles.confirmPanel}>
+                <TouchableOpacity styles={styles.confirmButton}>
+                    <Text style={{fontSize: 40}}>
+                        Confirm
+                    </Text>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     );
 }
@@ -172,5 +180,28 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin:5
     },
+    confirmPanel:{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        backgroundColor: '#f5f6fa',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin:1,
+        fontSize: 40,
+        fontWeight:"bold",
+        textAlign:"center",
+        backgroundColor:"#90EE90"
+    },
+    confirmButton:{
+        fontSize: 20,
+        backgroundColor: '#7bed9f',
+        marginTop: 10,
+        paddingHorizontal: 15,
+        borderWidth:2
+    }
     
 });
+
+export default FoodMenubar;

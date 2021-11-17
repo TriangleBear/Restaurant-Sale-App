@@ -12,7 +12,7 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 
-const CSideBar = (props) => {
+export const CSideBar = (props) => {
   const BASE_PATH =
     'https://i.imgur.com/';
   const proileImage = 'NwwfZ1L.png';

@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Restaurant-Sale-App",
+    "name": "Waiters_Tablet",
     "slug": "Restaurant-Sale-App",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/Waiter_Logo.png",
     "splash": {
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#fffff"
-      }
+      },
+      "package": "com.trianglebear.RestaurantSaleApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -20,9 +20,13 @@ export default App=()=>{
     <NavigationContainer>
       
       <Drawer.Navigator initialRouteName="HomeScreen"
+      initialRouteName="Home"
       drawerContentOptions={{
         activeTintColor: '#e91e63',
         itemStyle: {marginVertical: 5},
+      }}
+      screenOptions={{
+          headerShown: true,
       }}
       drawerContent={(props) => <CSideBar {...props} />}>
         

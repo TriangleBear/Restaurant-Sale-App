@@ -33,7 +33,7 @@ export default class Billing extends React.Component {
           style={styles.button}
           onPress={() => Alert.alert('Done')}>
           <Text style={{color:"white", fontWeight: "bold"}}>Fulfilled</Text>
-        </TouchableOpacity>
+      </TouchableOpacity>
   
     </View>
       );

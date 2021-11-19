@@ -14,7 +14,7 @@ let name3 = "Full Stack Developer: Kurt Jayson Zacarias";
 export default function Aboutbar() {
     return (
         <View>
-            <View style={styles.homeTopView}>
+            <View style={styles.aboutTopView}>
                 <Text style={[{ color: "white" },
                 { fontSize: 30 },
                 { fontWeight: "bold" }]}>Waiter's Tablet</Text>
@@ -27,7 +27,7 @@ export default function Aboutbar() {
 
 
 
-            <View style={styles.homeMidView}></View>
+            <View style={styles.aboutMidView}></View>
 
             <Text style={[{ color: "black" },
             { fontSize: 30 },
@@ -65,6 +65,16 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
     },
+    aboutTopView: {
+        height: "25%",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: '#63cdda',
+    },
+    aboutMidView: {
+        height: "3%",
+        backgroundColor: 'black',
+    },
     aboutText: {
         flex: 1,
         justifyContent: 'center',
@@ -83,29 +93,3 @@ const styles = StyleSheet.create({
         borderColor: "black"
     },
 });
-
-
-/*
-
-    aboutView: {
-        flex: 1,
-        flexDirection: "row",
-    },
-    aboutText: {
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor: '#63cdda',
-        fontSize: 27,
-        margin: 2,
-    },
-    aboutImg: {
-        width: 100,
-        height: 100,
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 150 / 2,
-        overflow: "hidden",
-        borderWidth: 3,
-        borderColor: "black"
-    },
-*/

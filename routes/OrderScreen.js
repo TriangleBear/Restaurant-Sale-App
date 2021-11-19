@@ -1,44 +1,35 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {  View, StyleSheet, Text, StatusBar, TouchableOpacity, Alert} from 'react-native';
+import {  View, StyleSheet, Text, StatusBar, TouchableOpacity, Alert, FlatList} from 'react-native';
 import { Divider } from 'react-native-paper';
 
-
-export default class OrderList extends React.Component {
-  constructor(){
+export default class OrderList extends React.Component{
+  constructor () {
     super()
-    this.state={
-        title: 'First Client',
-        orderList: '1x Sinigang: Pork \n1x Adobo: Pork \n6x Rice \n',
-    }
+    this.state=
+        {title: 'Pork Sinigang', price: 315, key: 1},
+        {title: 'Fish Sinigang', price: 345, key: 2};
   }
-
-  renderItem = () => (
-    /* to add more stuff to read by this render, add a data to the "const Data" first then come back here and
-    copy this format => <name of data> ={item. <name of data again>}
-    it can be copied and pasted together with the others, itll do the rest! */
-    <Item title={this.state.title} orderList={this.state.orderList}/>
-    
-  );
-    render(){
-      return (
-        <View style={styles.clientBar}>
-    <Text style={styles.title}>{this.state.title}</Text>
-   <Divider/>
-    <Text style={styles.orderList}>{this.state.orderList}</Text>
-      <View style={styles.qty}>
-      <Text style={styles.number}>{this.state.qty}</Text>
-      </View>
-    <TouchableOpacity
-        style={styles.button}
-        onPress={() => Alert.alert('Confirmed') }>
-        <Text style={{color:"white", fontWeight: "bold"}}>Confirm</Text>
-        
-      </TouchableOpacity>
-  </View>
-      );
-    }
- 
+  
+  render(){
+        return (
+          <View style={styles.clientBar}>
+                
+                  <View>
+                    <Text style={styles.title}>Test Client</Text>
+                    <Divider/>
+                    <Text style={styles.orderList}>{this.FoodData}</Text>
+               <TouchableOpacity
+                   style={styles.button}
+                   onPress={() => Alert.alert("Done") }>
+                   <Text style={{color:"white", fontWeight: "bold"}}>Confirm</Text>
+                 </TouchableOpacity>
+                </View>
+                  
+                
+          </View>
+        );
+      }
 }
 
 const styles = StyleSheet.create({

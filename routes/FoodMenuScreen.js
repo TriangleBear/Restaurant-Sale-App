@@ -1,152 +1,259 @@
 import React from 'react';
-import { View, 
+import { 
+    View, 
     Text,
     StyleSheet, 
     SafeAreaView, 
     ScrollView, 
-    Alert 
+    Alert,
+    ActivityIndicator 
         } from 'react-native'
 import { Divider } from 'react-native-paper';
 import OrderButton from './components/FoodMenuButtons';
-import FoodData, { PrkSin } from './components/FoodData';
 
-
-export default class FoodMenuba extends React.Component {
-    
+const urlFoodData = 'https://raw.githubusercontent.com/TriangleBear/Restaurant-Sale-App/master/routes/components/foodData.json';
+export default class FoodMenu extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={
+            isLoading: true,
+            dataSource: null,
+        }
+    }
+    componentDidMount(){
+        return fetch(urlFoodData)
+        .then( (response) => response.json() )
+        .then( (responseJson) => {
+            this.setState({
+                isLoading: false,
+                dataSource: responseJson.food
+            })
+        }).catch((error) => {
+            console.log(error)
+        });
+    }
     render(){
-        return (
-            <SafeAreaView >
-                <ScrollView >
-                    {/* Header */}
-                    <Text style={styles.orderTextHeader}>Sinigang</Text>
-                    <Divider />
-                    {/* pork */}
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Pork: 315</Text>
-                        <OrderButton
-                            onPress={() => ((Alert.alert("Added Sinigang na Baboy", "price: 315"))) }/>
-                    </View>
-    
-                    {/* fish */}
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Fish: 345</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Sinigang na Isda', "price: 345")}/>
-                    </View>
-    
-                    {/* prawn */}
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Prawn: 395</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Sinigang na Hipon', "price: 395")}/>
-                    </View>
-    
-                    {/* Header */}
-                    <Text style={styles.orderTextHeader}>Adobo</Text>
-                    <Divider />
-                    {/* pork adobo */}
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Pork: 315</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Pork Adobo', "price: 315")}/>
-                    </View>
-    
-                    {/* chicken adobo */}
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Chicken: 315</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Chicken Adobo', "price: 315")}/>
-                    </View>
-    
-                    <Text style={styles.orderTextHeader}> Others </Text>
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Tinolang Manok: 315</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Tinolang Manok', "price: 315")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Bulalo Soup: 395</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Bulalo Soup', "price: 395")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Crispy Pata: 595</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Cripy Pata', "price: 595")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Pancit Canton: 195</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Pancit Canton', "price: 195")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Pancit Bihon: 195</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Pancit Bihon', "price: 195")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Bicol Express: 315</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Bicol Express', "price: 315")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Bistik Tagalog: 315</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Bistik Tagalog', "price: 315")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Rice: 50</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Rice', "price: 50")}/>
-                    </View>
-    
-                    <Text style={styles.orderTextHeader}>Drinks</Text>
-                    <Divider />
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Sarsi 1.5: 60</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Sarsi 1.5', "price: 60")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Royal 1.5: 60</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Royal 1.5', "price: 60")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Coke 1.5: 60</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Coke 1.5', "price: 60")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Sprite 1.5: 60</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Sprite 1.5', "price: 60")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Ice Tea: 55</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Ice Tea Jag', "price: 55")}/>
-                    </View>
-    
-                    <View style={styles.orderPanel}>
-                        <Text style={[styles.orderText]}>Pineapple Juice: 55</Text>
-                        <OrderButton
-                            onPress={() => Alert.alert('Added Pineapple Juice Jag', "price: 55")}/>
-                    </View>
-                </ScrollView>
-            </SafeAreaView>
-        );
+
+        if(this.state.isLoading){
+            return(
+                <View styles={styles.container}>
+                    <ActivityIndicator/>
+                </View>
+            )
+        }else{
+            const PrkSiniP = this.state.dataSource.map((val)=>{return val.PrkSiniP;})
+            const FshSiniP = this.state.dataSource.map((val)=>{return val.FshSiniP;})
+            const PrwnSiniP = this.state.dataSource.map((val)=>{return val.PrwnSiniP;})
+            const PrkAdbP = this.state.dataSource.map((val)=>{return val.PrkAdbP;})
+            const ChkAdbP = this.state.dataSource.map((val)=>{return val.ChkAdbP;})
+            const ChkTnolaP = this.state.dataSource.map((val)=>{return val.ChkTnolaP;})
+            const BulSpP = this.state.dataSource.map((val)=>{return val.BulSpP;})
+            const CrpyPtP = this.state.dataSource.map((val)=>{return val.CrpyPtP;})
+            const PnctCtP = this.state.dataSource.map((val)=>{return val.PnctCtP;})
+            const PnctBihP = this.state.dataSource.map((val)=>{return val.PnctBihP;})
+            const BclExpP = this.state.dataSource.map((val)=>{return val.BclExpP;})
+            const BstkTglP = this.state.dataSource.map((val)=>{return val.BstkTglP;})
+            const RiceP = this.state.dataSource.map((val)=>{return val.RiceP;})
+            const Sarsi15P = this.state.dataSource.map((val)=>{return val.Sarsi15P;})
+            const Royal15P = this.state.dataSource.map((val)=>{return val.Royal15P;})
+            const Coke15P = this.state.dataSource.map((val)=>{return val.Coke15P;})
+            const Sprite15P = this.state.dataSource.map((val)=>{return val.Sprite15P;})
+            const IceTP = this.state.dataSource.map((val)=>{return val.IceTP;})
+            const PnaplJcP = this.state.dataSource.map((val)=>{return val.PnaplJcP;})
+            {/** ... .. .-. ....... .--- .- ... .--. . .-. ....... .-.. .- -. --. ....... -- .- .-.. .- -.- .- ... */}
+            return (
+                <SafeAreaView >
+                    <ScrollView >
+                        {console.log('Loaded')}
+                        <Text style={styles.orderTextHeader}>Sinigang</Text>
+                        <Divider />
+                        {/* pork */}
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Pork: {PrkSiniP}</Text>
+                            <OrderButton
+                                onPress={() => ((Alert.alert(
+                                    "Added Sinigang na Baboy", 
+                                    `price: ${PrkSiniP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}]))) }/>
+                        </View>
+        
+                        {/* fish */}
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Fish: {FshSiniP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Sinigang na Isda', 
+                                    `price: ${FshSiniP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        {/* prawn */}
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Prawn: {PrwnSiniP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Sinigang na Hipon', 
+                                    `price: ${PrwnSiniP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        {/* Header */}
+                        <Text style={styles.orderTextHeader}>Adobo</Text>
+                        <Divider />
+                        {/* pork adobo */}
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Pork: {PrkAdbP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Pork Adobo', 
+                                    `price: ${PrkAdbP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        {/* chicken adobo */}
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Chicken: {ChkAdbP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Chicken Adobo', 
+                                    `price: ${ChkAdbP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <Text style={styles.orderTextHeader}> Others </Text>
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Tinolang Manok: {ChkTnolaP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Tinolang Manok', 
+                                    `price: ${ChkTnolaP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Bulalo Soup: {BulSpP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Bulalo Soup', 
+                                    `price: ${BulSpP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Crispy Pata: {CrpyPtP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Cripy Pata', 
+                                    `price ${CrpyPtP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Pancit Canton: {PnctCtP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Pancit Canton', 
+                                    `price: ${PnctCtP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Pancit Bihon: {PnctBihP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Pancit Bihon', 
+                                    `price: ${PnctBihP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Bicol Express: {PnctBihP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Bicol Express', 
+                                    `price: ${PnctBihP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Bistik Tagalog: {BstkTglP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Bistik Tagalog', 
+                                    `price: ${BstkTglP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Rice: {RiceP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Rice', 
+                                    `price: ${RiceP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <Text style={styles.orderTextHeader}>Drinks</Text>
+                        <Divider />
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Sarsi 1.5: {Sarsi15P}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Sarsi 1.5', 
+                                    `price ${Sarsi15P}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Royal 1.5: {Royal15P}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Royal 1.5', 
+                                    `price: ${Royal15P}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Coke 1.5: {Coke15P}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Coke 1.5', 
+                                    `price: ${Coke15P}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Sprite 1.5: {Sprite15P}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Sprite 1.5', 
+                                    `price: ${Sprite15P}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Ice Tea: {IceTP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Ice Tea Jag', 
+                                    `price: ${IceTP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+        
+                        <View style={styles.orderPanel}>
+                            <Text style={[styles.orderText]}>Pineapple Juice: {PnaplJcP}</Text>
+                            <OrderButton
+                                onPress={() => Alert.alert(
+                                    'Added Pineapple Juice Jag', 
+                                    `price: ${PnaplJcP}`,
+                                    [{text: "Cancel",style: 'cancel'},{text: "OK",style: 'ok'}])}/>
+                        </View>
+                    </ScrollView>
+                </SafeAreaView>
+            );
+        }
+
+        
     }
 }
 
@@ -154,6 +261,9 @@ export default class FoodMenuba extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     
     orderTextHeader: {

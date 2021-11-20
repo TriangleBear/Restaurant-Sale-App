@@ -3,6 +3,23 @@
     "description": "Data Fetch for Food Data",
     "food": [
         { "PrkSini": "Pork Sinigang", "PrkSiniP": 315 },
-        { "FshSini": "Fish Sinigang", "FshSiniP": 345 }
+        { "FshSini": "Fish Sinigang", "FshSiniP": 345 },
+        { "PrwnSini": "Prawn Sinigang", "PrwnSiniP": 395 },
+        { "PrkAdb": "Pork Adobo", "PrkAdbP": 315 },
+        { "ChkAdb": "Chicken Adobo", "ChkAdbP": 315 },
+        { "ChkTnola": "Chicken Tinola", "ChkTnolaP": 315 },
+        { "BulSp": "Bulalo Soup", "BulSpP": 395 },
+        { "CrpyPt": "Crispy Pata", "CrpyPtP": 595 },
+        { "PnctCt": "Pancit Canton", "PnctCtP": 195 },
+        { "PnctBih": "Pancit Bihon", "PnctBihP": 195 },
+        { "BclExp": "Bicol Express", "BclExpP": 315 },
+        { "BstkTgl": "Bistik Tagalog", "BstkTglP": 315 },
+        { "Rice": "Rice", "RiceP": 50 },
+        { "Sarsi15": "Sarsi 1.5", "Sarsi15P": 60 },
+        { "Royal15": "Royal 1.5", "Royal15P": 60 },
+        { "Coke15": "Coke 1.5", "Coke15P": 60 },
+        { "Sprite15": "Sprite 1.5", "Sprite15P": 60 },
+        { "IceT": "Ice Tea", "IceTP": 55 },
+        { "PnaplJc": "Pineapple Juice", "PnaplJcP": 55 }
     ]
 }

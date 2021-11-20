@@ -33,7 +33,7 @@ export const CSideBar = (props) => {
           textAlign: 'center',
           color: 'grey'
         }}>
-        by JYK Corporation
+        by JYK App Solutions
       </Text>
     </SafeAreaView>
   );

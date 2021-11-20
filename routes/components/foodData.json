@@ -2,6 +2,7 @@
     "title": "Food_Data",
     "description": "Data Fetch for Food Data",
     "food": [
-        { "title": "Pork Sinigang", "price": "315" }
+        { "id": "1", "title": "Pork Sinigang", "price": 315},
+        { "id": "2", "title": "Fish Sinigang", "price": 345}
     ]
 }

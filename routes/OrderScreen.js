@@ -5,7 +5,7 @@ import { Divider } from 'react-native-paper';
 
 export default class OrderList extends React.Component{
   constructor () {
-    super()
+    super();
     this.state=
         {title: 'Pork Sinigang', price: 315, key: 1},
         {title: 'Fish Sinigang', price: 345, key: 2};
@@ -18,7 +18,7 @@ export default class OrderList extends React.Component{
                   <View>
                     <Text style={styles.title}>Test Client</Text>
                     <Divider/>
-                    <Text style={styles.orderList}>{this.FoodData}</Text>
+                    <Text style={styles.orderList}>{this.state.title}</Text>
                <TouchableOpacity
                    style={styles.button}
                    onPress={() => Alert.alert("Done") }>
